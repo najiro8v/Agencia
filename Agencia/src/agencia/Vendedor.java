@@ -12,10 +12,16 @@ import java.util.LinkedList;
 public class Vendedor {
     private LinkedList Modelo;
     private String vendedor;
-    private int VentasT;
+    private int VentasT=0;
+    private ModeloCar coche[]=new ModeloCar[15];
     
 
-    public Vendedor() {
+    public void ChocheSET() {
+        for(int i=0;i<15;i++){
+       coche[i].NameSet(temp.AgenciaCaro.Mod.getItemAt(i).toString());
+        }
+      
+       
     }
     public Vendedor(String Vendedor)
     {
@@ -46,5 +52,5 @@ public class Vendedor {
     {
         return this.VentasT;
     }
-            
+    
 }

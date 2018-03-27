@@ -10,5 +10,21 @@ package agencia;
  * @author reyna
  */
 public class ModeloCar {
+    private String Name;
+    private int Cant=0;
+    //get and set nombre
+    public void NameSet(String nombre)
+    {
+        this.Name=nombre;
+    }
+    public String NameGet()
+    {
+        return this.Name;
+    }
+    //get and set cant
+    public void CantSet()
+    {
+        this.Cant+=1;
+    }
     
 }
