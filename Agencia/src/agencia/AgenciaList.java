@@ -27,7 +27,8 @@ public class AgenciaList {
    }
    public void ventaNueva()
    {
-       
-       
+       int tempo=temp.AgenciaCaro.Vend.getSelectedIndex();
+       ve[tempo].newVentaSET(temp.AgenciaCaro.Vend.getSelectedItem().toString());
+       ve[tempo].VentaSet();
    }
 }

@@ -12,6 +12,11 @@ import java.util.LinkedList;
 public class Vendedor {
     private LinkedList Modelo;
     private String vendedor;
+    private int VentasT;
+    
+
+    public Vendedor() {
+    }
     public Vendedor(String Vendedor)
     {
         this.vendedor=Vendedor;
@@ -32,4 +37,14 @@ public class Vendedor {
     {
         return this.vendedor;
     }
+    /********************************/
+    public void VentaSet()
+    {
+        this.VentasT+=1;
+    }
+    public int VentatGet()
+    {
+        return this.VentasT;
+    }
+            
 }
