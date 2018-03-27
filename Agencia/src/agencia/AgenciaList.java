@@ -4,54 +4,30 @@
  * and open the template in the editor.
  */
 package agencia;
-import java.util.Enumeration;
-import javax.swing.tree.TreeNode;
+
 import temp.*;
 /**
  *
  * @author reyna
  */
 public class AgenciaList {
-    TreeNode nuevo=new TreeNode() {
-        @Override
-        public TreeNode getChildAt(int childIndex) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public int getChildCount() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public TreeNode getParent() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public int getIndex(TreeNode node) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public boolean getAllowsChildren() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public boolean isLeaf() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public Enumeration children() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    };
-    public TreeNode Lista()
-    {   
-        
-        
-        return nuevo;
-    }
+   private Vendedor ve[] =new Vendedor [10];
+   public AgenciaList()
+   {
+       ve[0].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(0).toString());
+       ve[1].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(1).toString());
+       ve[2].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(2).toString());
+       ve[3].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(3).toString());
+       ve[4].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(4).toString());
+       ve[5].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(5).toString());
+       ve[6].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(6).toString());
+       ve[7].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(7).toString());
+       ve[8].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(8).toString());
+       ve[9].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(9).toString());
+   }
+   public void ventaNueva()
+   {
+       
+       
+   }
 }
