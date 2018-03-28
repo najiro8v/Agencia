@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package agencia;
-
+import temp.*;
 /**
  *
  * @author reyna
@@ -25,6 +25,10 @@ public class ModeloCar {
     public void CantSet()
     {
         this.Cant+=1;
+    }
+    public int CantGet()
+    {
+        return this.Cant;
     }
     
 }

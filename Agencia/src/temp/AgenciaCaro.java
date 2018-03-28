@@ -1,6 +1,6 @@
 package temp;
 
-
+import agencia.*;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AgenciaCaro extends javax.swing.JFrame {
         DefaultTableModel modelo=new DefaultTableModel();
+        
     /**
      * Creates new form AgenciaCar
      */
@@ -26,7 +27,9 @@ public class AgenciaCaro extends javax.swing.JFrame {
         modelo.addColumn("Vendedor");
         modelo.addColumn("Modelo");
         jTable1.setModel(modelo);
+        lista.set();
     }
+    
     public ImageIcon mi_image(String name)
      {
          ImageIcon icono = new javax.swing.ImageIcon(getClass().
@@ -126,6 +129,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         String vendedor=Vend.getSelectedItem().toString()
                 ,modeloC=Mod.getSelectedItem().toString();
         String temp[]=new String [2];
@@ -133,7 +137,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
         temp[1]=modeloC;
         modelo.addRow(temp);
         jTable1.setModel(modelo);
-        
+        lista.ventaNueva();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -180,4 +184,5 @@ public class AgenciaCaro extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+AgenciaList lista =new AgenciaList();
 }

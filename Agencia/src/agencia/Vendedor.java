@@ -4,36 +4,53 @@
  * and open the template in the editor.
  */
 package agencia;
-import java.util.LinkedList;
+
+import temp.*;
 /**
  *
  * @author reyna
  */
 public class Vendedor {
-    private LinkedList Modelo;
     private String vendedor;
     private int VentasT=0;
     private ModeloCar coche[]=new ModeloCar[15];
     
-
+/***************************************/
+    
     public void ChocheSET() {
         for(int i=0;i<15;i++){
-       coche[i].NameSet(temp.AgenciaCaro.Mod.getItemAt(i).toString());
+       this.coche[i].NameSet(temp.AgenciaCaro.Mod.getItemAt(i).toString());
         }
       
        
     }
+    public String ChocheGEtNam(int pos)
+    {
+        return this.coche[pos].NameGet();
+    }
+    public int ChocheGEtCan(int pos)
+    {
+        return this.coche[pos].CantGet();
+    }
+    /****************************************************/
     public Vendedor(String Vendedor)
     {
         this.vendedor=Vendedor;
-    }/******************nodo******************/
-    public void newVentaSET(String modeloV)
-    {
-        this.Modelo.add(modeloV);
-    }        
-    public LinkedList Ventas()
-    {        return this.Modelo;
     }
+    public Vendedor()
+    {
+        for(int i=0;i<15;i++ ){
+             this.coche[i]=new ModeloCar();
+        }
+    }
+//******************nodo******************/
+    public void newVentaSET(int pos)
+    {
+        
+        this.coche[pos].CantSet();
+        
+    }        
+   
     /***********vendendor**********************/
     public void NameVenddedorset(String Vendedor)
     {
