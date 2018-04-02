@@ -38,4 +38,9 @@ public class AgenciaList {
       ve[0].NameVenddedorset(temp.AgenciaCaro.Vend.getItemAt(0).toString());
        
     }
+   public int getModel(int tempV,int TempM)
+   {
+       return this.ve[tempV].ChocheGEtCan(TempM);
+   }
+  
 }

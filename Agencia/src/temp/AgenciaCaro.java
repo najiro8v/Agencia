@@ -3,6 +3,8 @@ package temp;
 import agencia.*;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -16,18 +18,24 @@ import javax.swing.table.DefaultTableModel;
  * @author reyna
  */
 public class AgenciaCaro extends javax.swing.JFrame {
-        DefaultTableModel modelo=new DefaultTableModel();
+        DefaultTableModel modelo=new DefaultTableModel(),modelo2=new DefaultTableModel();
         
     /**
      * Creates new form AgenciaCar
      */
     public AgenciaCaro() {
         initComponents();
-        
+        this.jTabbedPane1.setSize(this.getSize());
+        this.jPanel1.setSize(this.getSize());
+        this.jPanel2.setSize(this.getSize());
+        this.jTable2.setSize(jPanel2.getSize());
         modelo.addColumn("Vendedor");
         modelo.addColumn("Modelo");
         jTable1.setModel(modelo);
         lista.set();
+        
+        jTable2.setModel(modelo1());
+        jTable2.setSize(this.getSize());
     }
     
     public ImageIcon mi_image(String name)
@@ -39,6 +47,29 @@ public class AgenciaCaro extends javax.swing.JFrame {
                 (imagen.getScaledInstance(50,50,Image.SCALE_DEFAULT));
         return iconoEscalado;
      }
+    public DefaultTableModel modelo1()
+    {   modelo2.addColumn("");
+        for(int i=0;i<10;i++)
+        {
+            modelo2.addColumn(Vend.getItemAt(i).toString());
+        }
+        modelo2.addColumn("Total");
+        String t[]=new String [11];
+        int con=0;
+        for(int i=0;i<16;i++)
+        {   if(i!=15)
+            {t[0]=Mod.getItemAt(i).toString();}
+            else{t[0]="Total";
+                 }
+            for(int j=1;j<10;j++){
+                 t[j]="";
+            }
+            modelo2.addRow(t);
+        }
+        jTable2.setModel(modelo2);
+        
+        return modelo2;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,8 +86,22 @@ public class AgenciaCaro extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
+
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MousePressed(evt);
+            }
+        });
 
         Vend.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vendedor #1", "Vendedor #2", "Vendedor #3", "Vendedor #4", "Vendedor #5", "Vendedor #6", "Vendedor #7", "Vendedor #8", "Vendedor #9", "Vendedor #10" }));
 
@@ -88,7 +133,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
+                .addContainerGap(368, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -113,6 +158,50 @@ public class AgenciaCaro extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Venta", jPanel1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "", "", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,6 +228,25 @@ public class AgenciaCaro extends javax.swing.JFrame {
         jTable1.setModel(modelo);
         lista.ventaNueva();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        this.jTabbedPane1.setSize(this.getSize());
+        this.jPanel1.setSize(this.getSize());
+        this.jPanel2.setSize(this.getSize());
+        this.jTable2.setSize(jPanel2.getSize());
+    }//GEN-LAST:event_formComponentResized
+
+    private void jTabbedPane1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MousePressed
+          
+        for(int i=0;i<15;i++)
+        {   
+            for(int j=1;j<11;j++){
+                 modelo2.setValueAt(lista.getModel(j-1,i ),i,j);
+            }
+            
+        }
+        jTable2.setModel(modelo2);
+    }//GEN-LAST:event_jTabbedPane1MousePressed
 
     /**
      * @param args the command line arguments
@@ -180,9 +288,12 @@ public class AgenciaCaro extends javax.swing.JFrame {
     public static javax.swing.JComboBox<String> Vend;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 AgenciaList lista =new AgenciaList();
 }
