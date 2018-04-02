@@ -25,6 +25,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
      */
     public AgenciaCaro() {
         initComponents();
+        
         this.jTabbedPane1.setSize(this.getSize());
         this.jPanel1.setSize(this.getSize());
         this.jPanel2.setSize(this.getSize());
@@ -32,6 +33,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
         modelo.addColumn("Vendedor");
         modelo.addColumn("Modelo");
         jTable1.setModel(modelo);
+        jLabel2.setText("Toca Aqui");
         lista.set();
         
         jTable2.setModel(modelo1());
@@ -155,7 +157,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
                 .addComponent(Vend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(Mod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,13 +204,14 @@ public class AgenciaCaro extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jTabbedPane1.addTab("Venta Total de cada Vendedor", jPanel2);
 
         jPanel3.setLayout(null);
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "El vendedor con mayor ventas es", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanel4MouseEntered(evt);
@@ -223,7 +226,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(176, Short.MAX_VALUE)
+                .addContainerGap(164, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(152, 152, 152))
         );
@@ -232,7 +235,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(139, 139, 139)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel4);
@@ -242,7 +245,7 @@ public class AgenciaCaro extends javax.swing.JFrame {
         jPanel3.add(jLabel1);
         jLabel1.setBounds(0, 0, 479, 357);
 
-        jTabbedPane1.addTab("tab3", jPanel3);
+        jTabbedPane1.addTab("Ganador", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -275,6 +278,9 @@ public class AgenciaCaro extends javax.swing.JFrame {
         this.jPanel1.setSize(this.getSize());
         this.jPanel2.setSize(this.getSize());
         this.jTable2.setSize(jPanel2.getSize());
+        this.jLabel1.setSize(this.getSize());
+        this.jPanel3.setSize(this.getSize());
+        this.jPanel4.setSize(this.getSize());
     }//GEN-LAST:event_formComponentResized
 
     private void jTabbedPane1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MousePressed
