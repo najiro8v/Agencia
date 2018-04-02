@@ -42,5 +42,27 @@ public class AgenciaList {
    {
        return this.ve[tempV].ChocheGEtCan(TempM);
    }
+    public int getV(int tempV)
+   {
+       return this.ve[tempV].VentatGet();
+   }
+    public String metodo_mayor()
+    {  
+        int Mayor =this.ve[0].VentatGet(),pos=0;
+        for(int i=1;i<10;i++)
+        {
+            if(Mayor<this.ve[i].VentatGet())
+            {
+                Mayor=this.ve[i].VentatGet();
+                pos=i;
+            }
+            
+        }
+        if (Mayor==this.ve[0].VentatGet())
+            {             
+                pos=0;
+            }
+        return this.ve[pos].NamVendedorGet();
+    }
   
 }
